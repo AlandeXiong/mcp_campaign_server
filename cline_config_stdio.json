@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "insurance-campaign-stdio": {
+      "command": "mvn",
+      "args": [
+        "exec:java",
+        "-Dexec.mainClass=com.insurance.mcp.McpStdioApplication",
+        "-Dspring.profiles.active=stdio",
+        "-q"
+      ],
+      "cwd": "/Users/xiongjian/project/Mcp_Campaign",
+      "env": {
+        "JAVA_HOME": "/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home"
+      }
+    }
+  }
+}

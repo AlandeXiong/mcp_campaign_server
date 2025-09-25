@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.1.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.1.0 http://maven.apache.org/xsd/assembly-2.1.0.xsd">
+
+    <id>streamable</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <fileSets>
+        <!-- Include the streamable JAR -->
+        <fileSet>
+            <directory>target</directory>
+            <outputDirectory>.</outputDirectory>
+            <includes>
+                <include>mcp-campaign-server-1.0.0-streamable.jar</include>
+            </includes>
+        </fileSet>
+
+        <!-- Include configuration files -->
+        <fileSet>
+            <directory>src/main/resources</directory>
+            <outputDirectory>config</outputDirectory>
+            <includes>
+                <include>application.yml</include>
+            </includes>
+        </fileSet>
+
+        <!-- Include startup scripts -->
+        <fileSet>
+            <directory>.</directory>
+            <outputDirectory>.</outputDirectory>
+            <includes>
+                <include>start_streamable_http.sh</include>
+            </includes>
+        </fileSet>
+
+        <!-- Include documentation -->
+        <fileSet>
+            <directory>.</directory>
+            <outputDirectory>docs</outputDirectory>
+            <includes>
+                <include>README.md</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+
+    <!-- Create startup script for the JAR -->
+    <files>
+        <file>
+            <source>src/scripts/run-streamable.sh</source>
+            <outputDirectory>.</outputDirectory>
+            <destName>run-streamable.sh</destName>
+            <fileMode>0755</fileMode>
+        </file>
+    </files>
+</assembly>

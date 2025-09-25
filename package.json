@@ -1,0 +1,27 @@
+{
+  "name": "mcp-http-stream-proxy",
+  "version": "1.0.0",
+  "description": "MCP HTTP Stream Proxy for remote connections",
+  "main": "http_stream_proxy.js",
+  "scripts": {
+    "start": "node http_stream_proxy.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mcp",
+    "http-stream",
+    "proxy",
+    "sse",
+    "claude"
+  ],
+  "author": "Insurance Campaign Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "bin": {
+    "mcp-proxy": "./http_stream_proxy.js"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
